@@ -1,0 +1,34 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="true">
+      <tr *ngFor="let producto of productos">
+        <th scope="row">{{producto.id}}</th>
+        <td>{{producto.modelo}}</td>
+        <td>{{producto.marca}}</td>
+        <td [ngStyle]="{color: producto.tipo == 'Pick-Up' ? 'red' : producto.tipo == 'hatchback' ? 'blue' : ''}">
+          {{producto.tipo}}</td>
+        <!-- <td [ngClass]="{pickup: producto.tipo == 'Pick-Up'}">{{producto.tipo}}</td> -->
+        <td *ngIf="producto.stock === 'SI'">✅</td>
+        <td *ngIf="producto.stock === 'NO'">✖️</td>
+        <button type="button" class="btn btn-primary" (click)="navegarADetalle(producto.id)">Ir a Detalle</button>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+<div [ngSwitch]="conditionExpression">
+  <div *ngSwitchCase="'AUTO'">Recordá que con la compra de tu auto tenés 6 meses de seguro gratis</div>
+  <div *ngSwitchCase="'CAMIONETA'">Recordá que con la compra de tu camioneta tenés 9 meses de seguro gratis</div>
+  <div *ngSwitchCase="'CAMION'">Recordá que con la compra de tu camión tenés 12 meses de seguro gratis</div>
+  <div *ngSwitchDefault>No dispones de una promoción</div>
+</div>

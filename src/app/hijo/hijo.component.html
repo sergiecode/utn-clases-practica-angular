@@ -1,0 +1,9 @@
+<form [formGroup]="formularioQueja" (ngSubmit)="enviar()">
+    <div class="mb-3">
+        <label for="queja" class="form-label">Haga su reclamo aquí: </label>
+        <textarea class="form-control" id="queja" rows="3" formControlName="queja" [ngClass]="{'is-invalid': validarQueja('queja', 'required') || validarQueja('queja', 'minlength')}"></textarea>
+        <div *ngIf="validarQueja('queja', 'required')" class="text-danger">Éste campo es obligatorio</div>
+        <div *ngIf="validarQueja('queja', 'minlength')" class="text-danger">Se debe escribir al menos 5 caractéres</div>
+    </div>
+    <button type="submit" class="btn btn-danger">Quejarse</button>
+</form>

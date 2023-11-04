@@ -1,0 +1,34 @@
+<form [formGroup]="formularioContacto" (ngSubmit)="enviar()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre</label>
+    <input type="text" class="form-control" [ngClass]="{'is-invalid': tieneErrores('name', 'required')}" id="name"
+      formControlName="name">
+    <span *ngIf="tieneErrores('name', 'required')" class="text-danger">El nombre es obligatorio</span>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo Electrónico</label>
+    <input type="email" class="form-control" id="email" formControlName="email"
+      [ngClass]="{'is-invalid': tieneErrores('email', 'required') || tieneErrores('email', 'email')}">
+    <span *ngIf="tieneErrores('email', 'required')" class="text-danger">Email requerido</span>
+    <span *ngIf="tieneErrores('email', 'email')" class="text-danger">Email inválido</span>
+  </div>
+  <!-- <div class="mb-3">
+    <label for="email" class="form-label">Correo Electrónico</label>
+    <input type="email" class="form-control" id="email" formControlName="email" [ngClass]="{'is-invalid': tieneErrores('email') || emailValido('email')}">
+    <span *ngIf="tieneErrores('email')" class="text-danger">Email requerido</span>
+    <span *ngIf="emailValido('email')" class="text-danger">Email inválido</span>
+  </div> -->
+  <div class="mb-3">
+    <select class="form-select" formControlName="motivo">
+      <option selected>Selecciona una opción</option>
+      <option value="Venta">Venta</option>
+      <option value="Compra">Compra</option>
+      <option value="Queja">Queja</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<ng-container *ngIf="mostrarQueja">
+  <app-hijo />
+</ng-container>
