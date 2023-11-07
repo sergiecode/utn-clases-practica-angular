@@ -1,7 +1,21 @@
-export type Producto = {
-    id: number
-    modelo: string
-    marca: string
-    tipo: string
-    stock: boolean | string
+export interface Producto {
+    id:          number;
+    title:       string;
+    price:       number;
+    description: string;
+    category:    Category;
+    image:       string;
+    rating:      Rating;
+}
+
+export enum Category {
+    Electronics = "electronics",
+    Jewelery = "jewelery",
+    MenSClothing = "men's clothing",
+    WomenSClothing = "women's clothing",
+}
+
+export interface Rating {
+    rate:  number;
+    count: number;
 }

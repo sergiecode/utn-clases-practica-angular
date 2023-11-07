@@ -1,0 +1,13 @@
+<ng-container *ngIf="loading">
+    Cargando...
+</ng-container>
+<ng-container *ngIf="!loading">
+    <h1>ESTE ES EL DETALLE DEL PRODUCTO:</h1>
+    <!-- Este producto es dinámico -->
+    <!-- producto se arma buscando en el array según el id de la URL -->
+    <p><b>Title: </b> {{producto?.title}}</p>
+    <p><b>Price: </b> {{producto?.price | currency}}</p>
+    <p><b>Description: </b> {{producto?.description}}</p>
+    
+</ng-container>
+

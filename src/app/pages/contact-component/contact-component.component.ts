@@ -12,6 +12,8 @@ export class ContactComponent implements OnInit {
   mostrarQueja: boolean = false
   isObligatorio: boolean = true
 
+  quienSeQueja: string = ''
+
   constructor(private fb: FormBuilder) {
     this.formularioContacto = this.fb.group({
       name: [''], //formControllers
@@ -37,7 +39,7 @@ export class ContactComponent implements OnInit {
   // }
 
   enviar() {
-    console.log(this.formularioContacto.value)
+    this.quienSeQueja = this.formularioContacto.get('name')?.value
   }
 
 }

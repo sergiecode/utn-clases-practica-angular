@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home-component/home-component.component';
-import { ContactComponent } from './contact-component/contact-component.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { ProductsComponent } from './products/products.component';
-import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
-import { HijoComponent } from './hijo/hijo.component';
+import { HomeComponent } from './pages/home-component/home-component.component';
+import { ContactComponent } from './pages/contact-component/contact-component.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { DetalleProductoComponent } from './pages/detalle-producto/detalle-producto.component';
+import { HijoComponent } from './pages/contact-component/components/hijo/hijo.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   exports: [],
