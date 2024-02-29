@@ -21,6 +21,9 @@ Curso intensivo realizado en 2023 de forma virtual por la Universidad tecnológi
 ## Me pueden encontrar en: 
 
 [Canal de Youtube | Sergie Code](https://www.youtube.com/@SergieCode)
+
 [Github | Sergie Code](https://github.com/sergiecode)
+
 [LinkedIn | Sergie Code](https://www.linkedin.com/in/sergiecode/)
+
 [Instagram | Sergie Code](https://www.instagram.com/sergiecode)
